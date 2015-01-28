@@ -8,6 +8,7 @@ Write a Ruby script to do the following:
 Take the string "Hello World" and split it on whitespace. Show two ways to do this.
 =end
 puts "Hello World".split
+puts "Hello World".scan(/\w+/)
 
 #Use the Peter Piper tongue twister and split it on 'pick'
 
