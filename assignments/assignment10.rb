@@ -8,7 +8,7 @@ For the original text input by the user, count how many words (as separated by s
 #!/usr/bin/ruby
 # Added a loop for fun
 loop do
-  
+
   puts "Please enter a phrase."
   phrase = gets.strip
   wonky_phrase = phrase.reverse.chop.reverse
@@ -20,5 +20,6 @@ loop do
   if answer == "n"
     puts "\nThanks for playing!"
     break
-
   end
+
+end
