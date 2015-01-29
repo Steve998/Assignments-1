@@ -28,14 +28,11 @@ questions.each do |question|
   all_answers << answer
 end
 
-
-
-
-puts "Wow, that was an informative interview! Thanks! Here's a transcript:\n\n"
+puts "\n\nWow, that was an informative interview! Thanks! Here's a transcript:\n\n"
 
 # I didn't know how to alternately iterate over two arrays, so I found this zip thing to combine two arrays into a single hash.
 transcript = Hash[questions.zip(all_answers)]
 
 transcript.each do |questions_key, all_answers_key|
-    puts "#{questions_key}  #{all_answers_key}"
+  puts "#{questions_key}  #{all_answers_key}"
 end
