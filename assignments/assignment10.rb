@@ -12,8 +12,8 @@ loop do
   puts "Please enter a phrase."
   phrase = gets.strip
   wonky_phrase = phrase.reverse.chop.reverse
-  # Calculates number of spaces, then adds one to get the number of words
-  puts "You entered #{phrase.scan(/ /).length+1} words. \nCheck out how I customized your phrase: \n#{wonky_phrase}"
+  # At first I used #phrase.scan(/ /).length+1 to calculate the number of spaces and add one to get the number of words. On the drive home it dawned on me that  I'd probably overlooked a way to count the words directly. Indeed! split.length
+  puts "You entered #{phrase.split.length} words. \nCheck out how I customized your phrase: \n#{wonky_phrase}"
 
   puts "\nWant to do that again? y/n\n\n"
   answer = gets.chomp
