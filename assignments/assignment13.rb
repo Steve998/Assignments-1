@@ -37,23 +37,20 @@ loop do
     how_many += 1
 
     # Describes levels of accuracy and displays messages to the user.
-    if guess == my_number && how_many == 1
+    if guess > top_of_range || guess < 1
+      puts "\nRemember, you set the range of 1 to #{top_of_range}."
+      puts "\n(You ignored the rules so I'm penalizing you by counting this as a guess.)"
+      puts "\nPlease guess a number within that range.\n\n"
+    elsif guess == my_number && how_many == 1
       puts "\nWowsa! You got it on the first try!"
       puts "\nYou should play the lottery!"
     elsif guess == my_number
       puts "\nThat's it! Nice job! You got it in #{how_many} guesses."
-    # Stuff after the && prevents "Too high"/"Too low" message from displaying
-    # when user guesses outside the range.
-    # Brian -- is there another way to accomplish this? See dud idea on line 25.
-    elsif guess > my_number && guess.between?(1, top_of_range)
+    elsif guess > my_number
       puts "\nToo high. Please guess again.\n\n"
-    elsif guess < my_number && guess.between?(1, top_of_range)
+    else guess < my_number
       puts "\nToo low. Please guess again.\n\n"
-    # Message for user who doesn't follow game rules
-    else guess > top_of_range || guess < 1
-      puts "\nRemember, you set the range of 1 to #{top_of_range}."
-      puts "\n(You ignored the rules so I'm penalizing you by counting this as a guess.)"
-      puts "\nPlease guess a number within that range.\n\n"
+
     end
   end
 
