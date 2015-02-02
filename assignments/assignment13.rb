@@ -23,8 +23,8 @@ loop do
   how_many = 0
 
   # This is a failed idea. Keeping it here so I can think about it and retry.
-  #def valid
-  #  self.guess.between?(1, top_of_range) == true
+  #def self.valid
+  #between?(1, top_of_range) == true
   #end
 
   puts "\nThanks! Okay, I'm thinking of a number between (and including) 1 and #{top_of_range}. Can you guess it?\n\n"
