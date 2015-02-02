@@ -12,8 +12,8 @@ Count the number of guesses and output at the end
 loop do
 
   puts "Let's play a game. I'm thinking of a number between 1 and ..."
-  puts "\n\nActually, I'll let you choose the range. Please choose the second number."
-  puts "\n\nRemember, if it's really big, you'll be guessing for a long time!\n\n"
+  puts "\nActually, I'll let you choose the range. Please choose the second number."
+  puts "\nRemember, if it's really big, you'll be guessing for a long time!\n\n"
 
   top_of_range = gets.chomp.to_i
   # Generates a random integer between (and including) 1 and whatever number
@@ -27,7 +27,7 @@ loop do
   #  self.guess.between?(1, top_of_range) == true
   #end
 
-  puts "\n\nThanks! Okay, I'm thinking of a number between (and including) 1 and #{top_of_range}. Can you guess it?\n\n"
+  puts "\nThanks! Okay, I'm thinking of a number between (and including) 1 and #{top_of_range}. Can you guess it?\n\n"
 
   guess = 0
   until guess == my_number do
@@ -38,28 +38,30 @@ loop do
 
     # Describes levels of accuracy and displays messages to the user.
     if guess == my_number && how_many == 1
-      puts "Wowsa! You got it on the first try! \n\nYou should pay the lottery!"
+      puts "\nWowsa! You got it on the first try!"
+      puts "\nYou should play the lottery!"
     elsif guess == my_number
-      puts "That's it! Nice job! You got it in #{how_many} guesses."
+      puts "\nThat's it! Nice job! You got it in #{how_many} guesses."
     # Stuff after the && prevents "Too high"/"Too low" message from displaying
     # when user guesses outside the range.
-    # Brian -- is there another way to accomplish this?
+    # Brian -- is there another way to accomplish this? See dud idea on line 25.
     elsif guess > my_number && guess.between?(1, top_of_range)
-      puts "Too high. Please guess again."
+      puts "\nToo high. Please guess again.\n\n"
     elsif guess < my_number && guess.between?(1, top_of_range)
-      puts "Too low. Please guess again."
+      puts "\nToo low. Please guess again.\n\n"
     # Message for user who doesn't follow game rules
     else guess > top_of_range || guess < 1
-      puts "Remember, you set the range of 1 to #{top_of_range}."
-      puts "(You ignored the rules so I'm penalizing you by counting this as a guess.)"
-      puts "Please guess a number within that range."
+      puts "\nRemember, you set the range of 1 to #{top_of_range}."
+      puts "\n(You ignored the rules so I'm penalizing you by counting this as a guess.)"
+      puts "\nPlease guess a number within that range.\n\n"
     end
   end
 
-  puts "Want to play again? y/n"
+  puts "\nWant to play again? y/n\n\n"
   again = gets.chomp
 
     if again == "n"
+      puts "Okay, maybe another time. Bye!"
       break
     end
 
