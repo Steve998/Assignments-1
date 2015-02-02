@@ -22,6 +22,7 @@ loop do
   # Sets counter to 0.
   how_many = 0
 
+
   puts "\n\nThanks! Okay, I'm thinking of a number between (and including) 1 and #{top_of_range}. Can you guess it?\n\n"
 
   guess = 0
@@ -29,6 +30,12 @@ loop do
 
     # Starts guessing.
     guess = gets.chomp.to_i
+
+    # This is a failed idea. Keeping it here so I can think about it and retry.
+    #def valid
+    #  guess.between?(1, top_of_range) == true
+    #end
+
     how_many += 1
 
     # Describes levels of accuracy and displays messages to the user.
