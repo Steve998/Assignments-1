@@ -17,5 +17,7 @@ script_from_net = Net::HTTP.get(uri)
 my_copy = File.new('assignment16_script.txt', 'w')
 # Pastes results of passed-in uri into my local file.
 my_copy.write(script_from_net)
+#Closes file.
+my_copy.close
 # Lets the user know it's done.
 puts "Done! Take a peek at assignment16_script.txt."
