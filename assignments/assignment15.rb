@@ -36,6 +36,7 @@ end
 
 puts "\n\nWow, that was an informative interview! Thanks! Here's a transcript:\n\n"
 
+# This section doesn't work now that questions are in a separate file.
 # I didn't know how to alternately iterate over two arrays, so I found this zip thing to combine two arrays into a single hash.
 transcript = Hash[questions.zip(all_answers)]
 
