@@ -1,13 +1,16 @@
-=begin This is assignment 15 and is due on Feb 02, 2015.
+=begin This is assignment 17 and is due on Feb 03, 2015.
 
-Copy and then modify assignment 12 to read the questions from a file instead of the hard coded array
-Load them into an array so the rest of the program can remain the same
-If your assignment 12 is coded correctly, you won't have to change the part that asks questions
-Can be done with two lines of code
-Remember to have the text file of questions in the same directory where your Ruby code is
+Read about HTTP
+Read review on using JSON in Ruby
+Look thru some JSON Examples
+Copy assignment 15 and modify to now read in questions from a JSON file
+This means you need to create a JSON file of you questions
+Read and parse the JSON into an array so the rest of the app remains the same
 =end
 
 #!/usr/bin/ruby
+
+require 'json'
 
 puts "Hi there. What's your first name?\n\n"
 
@@ -16,15 +19,23 @@ name = gets.chomp
 puts "\nNice to meet you, #{name.capitalize}. I'd like to ask you a few questions."
 
 # This section is new for this assignment.
-file = File.new("assignment15_questions.txt")
-questions = file.readlines
+#file = File.new("assignment15_questions.txt")
+#questions = file.readlines
 
-# This section was moved to file "assignment15_questions.txt"
-#questions = ["Are you a night owl or an early riser?",
+file = File.read('assignment17_questions.json')
+questions = JSON.parse(file)["questions"]
+
+
+# This content was formatted as JSON and moved to  "assignment17_questions.json"
+#{ "questions":
+#  [
+#  "Are you a night owl or an early riser?",
 #  "What's your favorite TV show?",
 #  "Sriracha: Evil or fab?",
 #  "Which are better, dogs or cats?",
-#  "Walmart or Target?"]
+#  "Walmart or Target?"
+#  ]
+#}
 
 all_answers = Array.new
 
