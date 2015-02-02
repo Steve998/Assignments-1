@@ -16,7 +16,8 @@ loop do
   puts "\n\nRemember, if it's really big, you'll be guessing for a long time!\n\n"
 
   top_of_range = gets.chomp.to_i
-  # Generates a random integer between (and including) 1 and whatever number the user chose.
+  # Generates a random integer between (and including) 1 and whatever number
+  # the user chose.
   my_number = rand(1..top_of_range)
   # Sets counter to 0.
   how_many = 0
@@ -30,12 +31,6 @@ loop do
     guess = gets.chomp.to_i
     how_many += 1
 
-    # Message for user who doesn't follow game rules
-    if guess > top_of_range || guess < 1
-      puts "Remember, you set the range of 1 to #{top_of_range}."
-      puts "Please guess a number within that range."
-    end
-
     # Describes levels of accuracy and displays messages to the user.
     if guess == my_number && how_many == 1
       puts "Wowsa! You got it on the first try! \n\nYou should pay the lottery!"
@@ -47,12 +42,17 @@ loop do
       # Prevents "Too high"/"Too low" message from displaying when user guesses
       # outside the range.
       # Brian -- is there another way to accomplish this?
-    elsif guess > my_number && (guess > 1 && guess < top_of_range)
+    elsif guess > my_number && (guess >= 1 && guess < top_of_range)
       puts "Too high. Please guess again."
-    else puts "Too low. Please guess again."
+    elsif guess < my_number && (guess >= 1 && guess < top_of_range)
+      puts "Too low. Please guess again."
+    # Message for user who doesn't follow game rules
+    else guess > top_of_range || guess < 1
+      puts "Remember, you set the range of 1 to #{top_of_range}."
+      puts "Please guess a number within that range."
     end
-
   end
+
 
   puts "Want to play again? y/n"
   again = gets.chomp
