@@ -30,7 +30,7 @@ class PigLatin
 
   # Check to see if the first letter is a vowel
   def self.starts_with_vowel(passed_text)
-    VOWELS.include? (passed_text[0])
+    VOWELS.include? (passed_text[0]).downcase
   end
 
   puts "Please enter a word and I will translate to pig latin"
