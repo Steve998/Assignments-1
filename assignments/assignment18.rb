@@ -21,7 +21,8 @@ If more than one movie comes back, show all the movie title matches with their s
   # Including a loop just for fun. Starting the loop after the QUERY_URL so I don't get the "warning: already initialized constant QUERY_URL" message.
   loop do
 
-  puts "Let's find a good movie. Please enter a title now.\n\n"
+  puts "Let's find a good movie. Please enter a one-word title now.\n\n"
+  puts "(I haven't figured out how to accommodate titles that contain spaces, but I'm working on it.)"
 
   title = gets.chomp
 
